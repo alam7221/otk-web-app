@@ -23,7 +23,8 @@ st.title("Shadowverse: Worlds Beyond")
 st.title("クオンorアスタロト 確率比較")
 
 st.markdown("10ppディメンション前にクオンかサタンどちらをプレイするか迷ったときに使ってください。")
-st.markdown("2枚目のディメンション等の細かい確率は含みません。")
+st.markdown("2枚目のディメンション等の細かい確率は含まず、％表記も大体です。")
+
 
 hand = st.number_input("現在の手札の枚数(クオンorサタンを使う直前の数値)", min_value=0, step=1)
 deck = st.number_input("現在のデッキの枚数(ディメンションで戻す前の数値)", min_value=0, step=1)
