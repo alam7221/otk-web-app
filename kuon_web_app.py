@@ -19,8 +19,9 @@ def calc_quon_prob(deck_size, quon_count):
     prob = 1 - rv.pmf(0)
     return prob * 100
 
-st.title("10pp時ディメンション クオンorアスタロト 確率比較")
+st.title("クオンorアスタロト 確率比較")
 
+st.markdown("10ppディメンション前にクオンかサタンどちらをプレイするか迷ったときに使ってください。")
 st.markdown("2枚目のディメンション等の細かい確率は含みません。")
 
 hand = st.number_input("現在の手札の枚数(クオンorサタンを使う直前の数値)", min_value=0, step=1)
