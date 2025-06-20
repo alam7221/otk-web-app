@@ -12,7 +12,6 @@ astaroth_probs = {
     15: 33.33,
     16: 31.25,
     17: 29.41,
-    18: 27.77,
 }
 
 def calc_quon_prob(deck_size, quon_count):
@@ -20,11 +19,11 @@ def calc_quon_prob(deck_size, quon_count):
     prob = 1 - rv.pmf(0)
     return prob * 100
 
-st.title("クオン vs アスタロト 確率比較ツール")
+st.title("10pp時ディメンション クオンorアスタロト 確率比較")
 
-hand = st.number_input("現在の手札の枚数", min_value=0, step=1)
-deck = st.number_input("現在のデッキの枚数", min_value=0, step=1)
-quon = st.number_input("クオンの残りの枚数（1〜2）", min_value=1, max_value=2, step=1)
+hand = st.number_input("現在の手札の枚数(クオンorサタンを使う直前の数値)", min_value=0, step=1)
+deck = st.number_input("現在のデッキの枚数(ディメンションで戻す前の数値)", min_value=0, step=1)
+quon = st.number_input("クオンの残りの枚数（ディメンションで戻した時のデッキに入っている枚数）", min_value=1, max_value=2, step=1)
 
 if st.button("確率を計算して比較"):
     quon_deck = hand + deck - 2
@@ -33,7 +32,7 @@ if st.button("確率を計算して比較"):
     if quon_deck < FIXED_DRAW_COUNT or quon_deck < quon:
         st.error("クオンのデッキ枚数が不正です。")
     elif astaroth_deck not in astaroth_probs:
-        st.error("アスタロトのデッキ枚数は10〜18枚にしてください。")
+        st.error("アスタロトのデッキ枚数は10〜17枚にしてください。")
     else:
         quon_prob = calc_quon_prob(quon_deck, quon)
         astaroth_prob = astaroth_probs[astaroth_deck]
