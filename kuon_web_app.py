@@ -32,7 +32,7 @@ if st.button("確率を計算して比較"):
     if quon_deck < FIXED_DRAW_COUNT or quon_deck < quon:
         st.error("クオンのデッキ枚数が不正です。")
     elif astaroth_deck not in astaroth_probs:
-        st.error("アスタロトのデッキ枚数は10〜17枚にしてください。")
+        st.error("手札の枚数が不正です。")
     else:
         quon_prob = calc_quon_prob(quon_deck, quon)
         astaroth_prob = astaroth_probs[astaroth_deck]
