@@ -20,7 +20,7 @@ def calc_quon_prob(deck_size, quon_count):
     prob = 1 - rv.pmf(0)
     return prob * 100
 
-st.title("クオン vs アスタロト 確率比較ツール（Web版）")
+st.title("クオン vs アスタロト 確率比較ツール")
 
 hand = st.number_input("現在の手札の枚数", min_value=0, step=1)
 deck = st.number_input("現在のデッキの枚数", min_value=0, step=1)
