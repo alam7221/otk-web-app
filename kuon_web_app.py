@@ -19,6 +19,7 @@ def calc_quon_prob(deck_size, quon_count):
     prob = 1 - rv.pmf(0)
     return prob * 100
 
+st.title("Shadowverse: Worlds Beyond")
 st.title("クオンorアスタロト 確率比較")
 
 st.markdown("10ppディメンション前にクオンかサタンどちらをプレイするか迷ったときに使ってください。")
